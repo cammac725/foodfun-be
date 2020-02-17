@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const db = require("../data/dbConfig")
 
 router.post("/register", (req, res) => {
-  let user = req.body;
+  const user = req.body;
 
   if (!user.username || ! user.password) {
     res.status(400).json({
@@ -83,3 +83,5 @@ router.get("/all", (req, res) => {
       })
     });
 });
+
+module.exports = router;
