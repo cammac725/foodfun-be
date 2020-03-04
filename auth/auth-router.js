@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 
-const db = require("../data/dbConfig")
+const tokenService = require('./token-service');
+const db = require("../data/dbConfig");
 
 router.post("/register", (req, res) => {
   const user = req.body;
@@ -72,7 +73,7 @@ router.post("/login", (req, res) => {
 
 // for testing
 
-router.get("/all", (req, res) => {
+router.get("/allmeals", (req, res) => {
   db("users")
     .then(users => {
       res.status(200).json(users);

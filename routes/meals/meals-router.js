@@ -17,7 +17,7 @@ router.get("/", restricted, (req, res) => {
     });
 });
 
-router.get('/all', (req, res) => {
+router.get('/allmeals', (req, res) => {
   db("meals")
     .then(meals => {
       res.status(200).json(meals);
@@ -38,7 +38,7 @@ router.get("/id", restricted, (req, res) => {
         res.status(200).json(meal);
       } else {
         res.status(404).json({
-          error: "You cannot access the meal with this specifi id."
+          error: "You cannot access the meal with this specific id."
         });
       }
     })
