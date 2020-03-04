@@ -10,6 +10,7 @@
 
 # production
 /build
+/data/seeds/000-cleanup.js
 
 # misc
 .DS_Store
