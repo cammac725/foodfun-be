@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-  return knex.schema.withSchema("users").createTable("meals", meals => {
+  return knex.schema.withSchema("meals").createTable("meals", meals => {
     meals.increments();
 
     meals.string("restaurant_name", 255)
