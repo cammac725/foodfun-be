@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-  return knex.schema.createTable("meals", meals => {
+  return knex.schema.withSchema("meals").createTable("meals", meals => {
     meals.increments();
 
     meals.string("restaurant_name", 255)
@@ -24,5 +24,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExistes("meals");
+  return knex.schema.dropTableIfExists("meals");
 };
